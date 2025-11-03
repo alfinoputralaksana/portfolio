@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with Meyawo landing page.">
+    <meta name="author" content="Devcrud">
+    <title>Portfolio Alfino Putra Laksana</title>
+    <!-- font icons -->
+    <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
+    <!-- Bootstrap + Meyawo main styles -->
+    <link rel="stylesheet" href="assets/css/meyawo.css">
+    <style>
+        .header .header-content .header-title .down {
+            white-space: nowrap;
+            font-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1300 - 300)));
+            line-height: 1.2;
+        }
+        .header .header-content .header-title .up {
+            font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1300 - 300)));
+            margin-bottom: 10px;
+        }
+        @media (max-width: 768px) {
+            .header .header-content .header-title .down {
+                font-size: 24px;
+            }
+            .header .header-content .header-title .up {
+                font-size: 18px;
+            }
+        }
+        
+        /* Portfolio Grid Improvements */
+        .portfolio-card {
+            display: block;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .portfolio-card-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-card-img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(128, 128, 128, 0.8), rgba(128, 128, 128, 0.6));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .portfolio-card:hover .portfolio-card-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-card-caption h4 {
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .portfolio-card-caption p {
+            color: rgba(0, 0, 0, 0.8);
+            font-size: 0.8rem;
+            margin: 0;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-card-img {
+                height: 180px;
+            }
+            .portfolio-card-caption h4 {
+                font-size: 1rem;
+                font-weight: 500;
+            }
+            .portfolio-card-caption p {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .portfolio-card-img {
+                height: 160px;
+            }
+            .portfolio-card-caption h4 {
+                font-size: 0.9rem;
+            }
+            .portfolio-card-caption p {
+                font-size: 0.65rem;
+            }
+        }
+        /* Contact Cards */
+        .contact-grid .contact-card {
+            display: block;
+            height: 100%;
+            padding: 24px;
+            border-radius: 14px;
+            background: #ffffff;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-grid .contact-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+            border-color: rgba(0,0,0,0.12);
+        }
+
+        .contact-card .contact-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 28px;
+            background: rgba(0,0,0,0.04);
+            color: #444;
+        }
+
+        .contact-card h6 {
+            margin-bottom: 6px;
+        }
+
+        .contact-card .contact-text {
+            margin: 0;
+            font-size: 0.95rem;
+            word-break: break-word;
+            opacity: 0.9;
+        }
+
+        /* Variants */
+        .contact-card.is-linkedin .contact-icon { background: rgba(0, 119, 181, 0.12); color: #0077b5; }
+        .contact-card.is-phone .contact-icon { background: rgba(40, 167, 69, 0.12); color: #28a745; }
+        .contact-card.is-address .contact-icon { background: rgba(220, 53, 69, 0.12); color: #dc3545; }
+
+        @media (max-width: 576px) {
+            .contact-grid .contact-card { padding: 20px; }
+            .contact-card .contact-icon { width: 56px; height: 56px; font-size: 24px; }
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+
+    <!-- Page Navbar -->
+    <nav class="custom-navbar" data-spy="affix" data-offset-top="20">
+        <div class="container">
+            <a class="logo" href="#">Alfino Putra Laksana</a>
+        </div>
+    </nav><!-- End of Page Navbar -->
+
+    <!-- page header -->
+    <header id="home" class="header">
+        <div class="overlay"></div>
+        <div class="header-content container">
+            <h1 class="header-title">
+                <span class="up">HI!</span>
+                <span class="down">I am Alfino Putra Laksana</span>
+            </h1>
+            <p class="header-subtitle">FULLSTACK DEVELOPER</p>
+
+            <a href="#about" class="btn btn-primary">View My Portfolio</a>
+        </div>
+    </header><!-- end of page header -->
+
+    <!-- about section -->
+    <section class="section pt-0" id="about">
+        <!-- container -->
+        <div class="container text-center">
+            <!-- about wrapper -->
+            <div class="about">
+                <div class="about-img-holder">
+                    <img src="assets/imgs/alfino.png" class="about-img"
+                        alt="">
+                </div>
+                <div class="about-caption">
+                    <p class="section-subtitle">Who Am I ?</p>
+                    <h2 class="section-title mb-3">About Me</h2>
+                    <p>
+                        Fullstack Developer with hands-on experience in developing and maintaining web applications using Laravel,
+                        CodeIgniter, Node.js, and ASP.NET. Experienced in building scalable APIs, optimizing database performance,
+                        and integrating third-party services. Passionate about delivering efficient, maintainable code and solving complex
+                        backend and frontend challenges.
+                    </p>
+                    <a href="assets/cv/CV_Alfino%20Putra%20Laksana.pdf" download class="btn-rounded btn btn-outline-primary mt-4" aria-label="Download my CV as PDF">Download CV</a>
+                </div>
+            </div><!-- end of about wrapper -->
+        </div><!-- end of container -->
+    </section> <!-- end of about section -->
+
+    <!-- service section -->
+    <section class="section" id="service">
+        <div class="container text-center">
+            <h6 class="section-title mb-6">My Tech Stack</h6>
+            <!-- row -->
+            <div class="row">
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/laravel-2.svg" alt="Laravel Logo" class="icon">
+                            <h6 class="title">Laravel</h6>
+                            <p class="subtitle">
+                                Experienced in developing web applications and backend features using Laravel, 
+                                focusing on performance optimization and clean architecture.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/Codeigniter.svg" alt="CodeIgniter Logo" class="icon">
+                            <h6 class="title">CodeIgniter</h6>
+                            <p class="subtitle">
+                                Skilled in building web systems with CodeIgniter, emphasizing efficient backend logic 
+                                and structured data management.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/icons8-nodejs.svg" alt="Node.js Logo" class="icon">
+                            <h6 class="title">Node.js</h6>
+                            <p class="subtitle">
+                                Able to develop backend services and RESTful APIs using Node.js to support scalable and 
+                                modern web applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/icons8-flutter-logo.svg" alt="Flutter Logo" class="icon">
+                            <h6 class="title">Flutter</h6>
+                            <p class="subtitle">
+                                Capable of building cross-platform mobile applications with Flutter, focusing on 
+                                responsive UI and smooth user experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end of row -->
+        </div>
+    </section><!-- end of service section -->
+    
+
+ <!-- portfolio section -->
+<section class="section" id="portfolio">
+    <div class="container text-center">
+        <h6 class="section-title mb-6">My Recent Work</h6>
+
+        <!-- row 1 -->
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="https://ojp.uhamka.ac.id/" target="_blank" class="portfolio-card">
+                    <img src="assets/imgs/ojp.png" class="portfolio-card-img" alt="OJP Journal Portal">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>OJP Journal Portal</h4>
+                            <p class="font-weight-normal">Web Application · Laravel & Flowise AI</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="https://teknoka.uhamka.ac.id/" target="_blank" class="portfolio-card">
+                    <img src="assets/imgs/teknoka.png" class="portfolio-card-img" alt="Teknoka Conference System">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>Teknoka Conference System</h4>
+                            <p class="font-weight-normal">Event Management · CodeIgniter</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="https://mbkm-lldikti3.kemdikbud.go.id/nirm/" target="_blank" class="portfolio-card">
+                    <img src="assets/imgs/nirm.png" class="portfolio-card-img" alt="NIRM Search Platform">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>NIRM Search Platform</h4>
+                            <p class="font-weight-normal">Student Verification · Laravel</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!-- end of row 1 -->
+
+        <!-- row 2 -->
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="#" class="portfolio-card">
+                    <img src="assets/imgs/sipintar.png" class="portfolio-card-img" alt="Sipintar Nutrition App">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>Sipintar Nutrition App</h4>
+                            <p class="font-weight-normal">Mobile Application · Flutter</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="#" class="portfolio-card">
+                    <img src="assets/imgs/uhamkapress.png" class="portfolio-card-img" alt="UhamkaPress Publication System">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>UhamkaPress Publication System</h4>
+                            <p class="font-weight-normal">Publishing Platform · Laravel</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href="#" class="portfolio-card">
+                    <img src="assets/imgs/artikel.png" class="portfolio-card-img" alt="Youth Awareness News Portal">
+                    <span class="portfolio-card-overlay">
+                        <span class="portfolio-card-caption">
+                            <h4>Youth Awareness News Portal</h4>
+                            <p class="font-weight-normal">Educational News Website · Laravel</p>
+                        </span>
+                    </span>
+                </a>
+            </div>
+        </div>
+        <!-- end of row 2 -->
+    </div>
+</section>
+<!-- end of portfolio section -->
+
+
+<!-- contact section -->
+<section class="section" id="contact">
+    <div class="container text-center">
+        <p class="section-subtitle">How can you communicate?</p>
+        <h6 class="section-title mb-5">Contact Me</h6>
+
+        <div class="row justify-content-center contact-grid">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <a class="contact-card is-linkedin" href="https://www.linkedin.com/in/alfino-putra-laksana-5a55a8228/" target="_blank" rel="noopener" aria-label="Open LinkedIn profile">
+                    <div class="contact-icon">
+                        <i class="ti-linkedin"></i>
+                    </div>
+                    <h6 class="mb-2">LinkedIn</h6>
+                    <p class="contact-text">linkedin.com/in/alfino-putra-laksana-5a55a8228</p>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <a class="contact-card is-phone" href="tel:+62895704268728" aria-label="Call phone number">
+                    <div class="contact-icon">
+                        <i class="ti-mobile"></i>
+                    </div>
+                    <h6 class="mb-2">Phone</h6>
+                    <p class="contact-text">+62 895 7042 68728</p>
+                </a>
+            </div>
+
+            <div class="col-md-6 col-lg-4 mb-4">
+                <a class="contact-card is-address" href="https://maps.google.com/?q=Jl. Mandai II No. 17, Depok City, 16417, Indonesia" target="_blank" rel="noopener" aria-label="Open address in Google Maps">
+                    <div class="contact-icon">
+                        <i class="ti-location-pin"></i>
+                    </div>
+                    <h6 class="mb-2">Address</h6>
+                    <p class="contact-text">Jl. Mandai II No. 17, Depok City, 16417, Indonesia</p>
+                </a>
+            </div>
+        </div><!-- end of row -->
+    </div><!-- end of container -->
+</section>
+<!-- end of contact section -->
+
+
+    <!-- footer -->
+    <div class="container">
+        <footer class="footer">
+            <p class="mb-0">Copyright
+                <script>document.write(new Date().getFullYear())</script> &copy; <a
+                    href="https://www.linkedin.com/in/alfino-putra-laksana-5a55a8228/">Alfino Putra Laksana</a> 
+            </p>
+        </footer>
+    </div> <!-- end of page footer -->
+
+    <!-- core  -->
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+
+    <!-- bootstrap 3 affix -->
+    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+
+    <!-- Meyawo js -->
+    <script src="assets/js/meyawo.js"></script>
+
+</body>
+
+</html>
