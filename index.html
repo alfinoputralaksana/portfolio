@@ -166,6 +166,40 @@
             .contact-grid .contact-card { padding: 20px; }
             .contact-card .contact-icon { width: 56px; height: 56px; font-size: 24px; }
         }
+
+        /* Tech Stack 3 Columns Layout */
+        #service .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        #service .row > div {
+            flex: 0 0 calc(33.333% - 0.75rem);
+            min-width: 0;
+        }
+
+        #service .subtitle {
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 1200px) {
+            #service .row > div {
+                flex: 0 0 calc(50% - 0.5rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            #service .row > div {
+                flex: 0 0 100%;
+            }
+        }
+
+        /* About section text justification */
+        .about-caption p {
+            text-align: justify;
+        }
     </style>
 </head>
 
@@ -206,10 +240,11 @@
                     <p class="section-subtitle">Who Am I ?</p>
                     <h2 class="section-title mb-3">About Me</h2>
                     <p>
-                        Fullstack Developer with hands-on experience in developing and maintaining web applications using Laravel,
-                        CodeIgniter, Node.js, and ASP.NET. Experienced in building scalable APIs, optimizing database performance,
-                        and integrating third-party services. Passionate about delivering efficient, maintainable code and solving complex
-                        backend and frontend challenges.
+                        Fullstack Developer with strong experience in web and mobile application development, specializing in Laravel,
+CodeIgniter, React JS, Flutter, Node.js, and ASP.NET. Proven ability to build scalable systems, integrate APIs,
+optimize application performance, and deliver maintainable code. Experienced in developing academic,
+institutional, and financial systems, with a strong focus on problem-solving, system reliability, and collaboration
+across technical and business teams.    
                     </p>
                     <a href="assets/cv/CV_Alfino%20Putra%20Laksana.pdf" download class="btn-rounded btn btn-outline-primary mt-4" aria-label="Download my CV as PDF">Download CV</a>
                 </div>
@@ -239,7 +274,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/Codeigniter.svg" alt="CodeIgniter Logo" class="icon">
+                            <img src="assets/imgs/CodeIgniter.svg" alt="CodeIgniter Logo" class="icon">
                             <h6 class="title">CodeIgniter</h6>
                             <p class="subtitle">
                                 Skilled in building web systems with CodeIgniter, emphasizing efficient backend logic 
@@ -270,6 +305,32 @@
                             <p class="subtitle">
                                 Capable of building cross-platform mobile applications with Flutter, focusing on 
                                 responsive UI and smooth user experience.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/react-logo.svg" alt="React Logo" class="icon">
+                            <h6 class="title">React.js</h6>
+                            <p class="subtitle">
+                                Proficient in building interactive and dynamic user interfaces using React.js, 
+                                with expertise in component-based architecture and state management.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <div class="body">
+                            <img src="assets/imgs/dotnet-logo.svg" alt=".NET Logo" class="icon">
+                            <h6 class="title">.NET</h6>
+                            <p class="subtitle">
+                                Experienced in building secure and scalable web applications using .NET, with expertise 
+                                in ASP.NET and modern framework patterns.
                             </p>
                         </div>
                     </div>
@@ -327,7 +388,7 @@
         <!-- row 2 -->
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 mb-4">
-                <a href="#" class="portfolio-card">
+                <a href="https://play.google.com/store/apps/details?id=com.uhamka.sipintar&pli=1" class="portfolio-card">
                     <img src="assets/imgs/sipintar.png" class="portfolio-card-img" alt="Sipintar Nutrition App">
                     <span class="portfolio-card-overlay">
                         <span class="portfolio-card-caption">
